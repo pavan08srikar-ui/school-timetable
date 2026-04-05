@@ -70,7 +70,7 @@ export function StepFaculty({ hook }) {
       onMouseLeave={() => { setIsDragging(false); setDragMode(null); }}
     >
       <h3>Faculty</h3>
-      <p className="mb-6 text-text-secondary">Instead of typing subject names manually, click multiple subject chips below to assign expertise to the faculty member. This reduces input mistakes.</p>
+
 
       <div className="glass-card mb-8">
         <div className="grid grid-cols-2 gap-4 mb-4">

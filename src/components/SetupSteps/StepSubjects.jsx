@@ -21,7 +21,7 @@ export function StepSubjects({ hook }) {
   return (
     <div className="animate-fade-in">
       <h3>Subjects</h3>
-      <p className="mb-6 text-text-secondary">Set the teaching limits for each subject. These constraints guide generation quality and stop overload.</p>
+      <p className="mb-6 text-text-secondary">Set the teaching limits for each subject.</p>
 
       <div className="glass-card mb-8">
         <div className="grid grid-cols-2 gap-4 mb-4">
