@@ -63,7 +63,7 @@ export function Wizard({ hook, onGenerate }) {
       </header>
 
       {/* Progress Bar / Stepper */}
-      <div className="flex justify-between items-center mb-8 glass-panel" style={{ padding: '1rem 2rem' }}>
+      <div className="flex justify-between items-center mb-8 glass-panel progress-container" style={{ padding: '1rem 2rem' }}>
         {steps.map((step, idx) => (
           <div key={step.num} className="flex items-center">
             <div 

@@ -115,16 +115,16 @@ export function Grid({ hook, onBack }) {
         </div>
       )}
 
-      <div className="glass-panel" style={{ overflowX: 'auto', padding: '1rem' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
+      <div className="glass-panel table-wrapper">
+        <table className="timetable-grid">
           <thead>
             <tr>
-              <th style={{ padding: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>Day / Period</th>
+              <th style={{ borderBottom: '1px solid rgba(0,0,0,0.05)' }}>Day / Period</th>
               {Array.from({length: globalMaxPeriods}).map((_, i) => {
                 // Is this a global break period?
                 const isBreak = schema.constraints.breakPeriods.includes(i + 1);
                 return (
-                  <th key={i} style={{ padding: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', color: isBreak ? 'var(--color-warning)' : 'inherit' }}>
+                  <th key={i} style={{ borderBottom: '1px solid rgba(0,0,0,0.05)', color: isBreak ? 'var(--color-warning)' : 'inherit' }}>
                     #{i+1} {isBreak && '(Break)'}
                   </th>
                 )
@@ -134,7 +134,7 @@ export function Grid({ hook, onBack }) {
           <tbody>
             {days.map((day, d) => (
               <tr key={day}>
-                <td style={{ padding: '1rem', fontWeight: 'bold', borderBottom: '1px solid rgba(255,255,255,0.05)', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
+                <td style={{ fontWeight: 'bold', borderRight: '1px solid rgba(0,0,0,0.05)' }}>
                   {day}
                 </td>
                 {matrix && matrix[d].map((slot, p) => {
@@ -152,7 +152,7 @@ export function Grid({ hook, onBack }) {
                         <strong className="text-brand-primary">{sub?.name || '---'}</strong>
                         {viewMode === 'class' && <span style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)' }}>{fac?.name}</span>}
                         {viewMode === 'faculty' && <span style={{ fontSize: '0.8rem', color: 'var(--color-brand-secondary)' }}>{clsContext?.name}</span>}
-                        {room && <span style={{ fontSize: '0.75rem', background: 'rgba(255,255,255,0.05)', padding: '2px 4px', borderRadius: '4px', marginTop: '2px' }}>{room.name}</span>}
+                        {room && <span style={{ fontSize: '0.75rem', background: 'rgba(0,0,0,0.03)', padding: '2px 4px', borderRadius: '4px', marginTop: '2px', color: 'var(--color-text-muted)' }}>{room.name}</span>}
                       </div>
                     );
                   }
@@ -163,17 +163,13 @@ export function Grid({ hook, onBack }) {
                       key={p} 
                       onClick={() => !isBreak && handleSlotClick(d, p, slot)}
                       style={{ 
-                        padding: '0.75rem', 
-                        borderBottom: '1px solid rgba(255,255,255,0.05)',
-                        borderRight: p < globalMaxPeriods - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                        borderRight: p < globalMaxPeriods - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none',
                         cursor: (viewMode === 'class' && !isBreak) ? 'pointer' : 'default',
-                        backgroundColor: isSwapping ? 'rgba(99, 102, 241, 0.2)' : isBreak ? 'rgba(255, 255, 255, 0.02)' : 'transparent',
-                        transition: 'background 0.2s',
-                        height: '80px',
-                        minWidth: '120px'
+                        backgroundColor: isSwapping ? 'rgba(79, 70, 229, 0.1)' : isBreak ? 'rgba(0, 0, 0, 0.02)' : 'transparent',
+                        transition: 'background 0.2s'
                       }}
-                      onMouseEnter={e => { if(viewMode==='class' && !isBreak) e.currentTarget.style.backgroundColor = isSwapping ? 'rgba(99, 102, 241, 0.3)' : 'rgba(255,255,255,0.05)' }}
-                      onMouseLeave={e => { if(viewMode==='class' && !isBreak) e.currentTarget.style.backgroundColor = isSwapping ? 'rgba(99, 102, 241, 0.2)' : (isBreak ? 'rgba(255, 255, 255, 0.02)' : 'transparent') }}
+                      onMouseEnter={e => { if(viewMode==='class' && !isBreak) e.currentTarget.style.backgroundColor = isSwapping ? 'rgba(79, 70, 229, 0.15)' : 'rgba(0,0,0,0.02)' }}
+                      onMouseLeave={e => { if(viewMode==='class' && !isBreak) e.currentTarget.style.backgroundColor = isSwapping ? 'rgba(79, 70, 229, 0.1)' : (isBreak ? 'rgba(0, 0, 0, 0.02)' : 'transparent') }}
                     >
                       {cellContent}
                     </td>

@@ -182,9 +182,10 @@ label {
 
 /* Layout Utilities */
 .container {
-  max-width: 1200px;
+  max-width: 95%;
+  width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
 .flex { display: flex; }
@@ -192,6 +193,11 @@ label {
 .items-center { align-items: center; }
 .justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-1 { flex: 1; }
+.w-full { width: 100%; }
+
+.gap-1 { gap: 0.25rem; }
 .gap-2 { gap: 0.5rem; }
 .gap-4 { gap: 1rem; }
 .gap-6 { gap: 1.5rem; }
@@ -208,6 +214,7 @@ label {
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
+.mb-8 { margin-bottom: 2rem; }
 
 /* Text Utilities */
 .text-brand-primary { color: var(--color-brand-primary); }
@@ -240,4 +247,74 @@ label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 1024px) {
+  .grid-cols-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .grid-cols-2, .grid-cols-3, .grid-cols-4, .grid-cols-5 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .app-header > div {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  /* Make the wizard progress steps scrollable cleanly */
+  .progress-container {
+    overflow-x: auto;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    justify-content: flex-start !important;
+  }
+
+  .progress-container > div {
+    min-width: 60px;
+  }
+}
+
+/* Timetable Grid specific */
+.table-wrapper {
+  overflow-x: auto;
+  padding: 1rem;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.02);
+  border-radius: var(--radius-lg);
+}
+
+.timetable-grid {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.timetable-grid th, .timetable-grid td {
+  padding: 0.75rem;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.timetable-grid td {
+  min-width: 130px;
+  height: 90px;
 }
