@@ -14,7 +14,7 @@ export function StepClassrooms({ hook }) {
 
   return (
     <div className="animate-fade-in">
-      <h3>Step 2: Classrooms</h3>
+      <h3>Classrooms</h3>
       <p className="mb-6 text-text-secondary">Add rooms, labs, and hall spaces. The generator uses these to avoid room conflicts and capacity problems.</p>
 
       <div className="glass-card mb-8">

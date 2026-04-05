@@ -64,7 +64,7 @@ export function StepDayCycle({ hook }) {
 
   return (
     <div className="animate-fade-in">
-      <h3>Step 3: Day Cycle</h3>
+      <h3>Day Cycle</h3>
       <p className="mb-6 text-text-secondary">
         Some schools use weekdays like Monday to Sunday, while some colleges run custom cycles like Day 1, Day 2, Day 3. You can keep the default, rename days, disable unused days, and click arrows to reorder.
       </p>

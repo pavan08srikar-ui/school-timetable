@@ -22,7 +22,7 @@ export function StepMapping({ hook, onGenerate }) {
     <div className="animate-fade-in">
       <div className="flex justify-between items-start mb-6">
         <div style={{ maxWidth: '600px' }}>
-          <h3>Step 7: Mapping and Generate</h3>
+          <h3>Mapping and Generate</h3>
           <p className="text-text-secondary mt-2">Map each class-subject to a faculty member and optionally a preferred room. Then generate automatically for one or many classes while keeping faculty clashes blocked across all selected classes.</p>
         </div>
         

@@ -14,7 +14,7 @@ export function StepClasses({ hook }) {
 
   return (
     <div className="animate-fade-in">
-      <h3>Step 1: Classes</h3>
+      <h3>Classes</h3>
       <p className="mb-6 text-text-secondary">Create each class-section first. These become the timetable targets the engine will schedule.</p>
 
       <div className="glass-card mb-8">

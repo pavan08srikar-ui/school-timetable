@@ -22,7 +22,7 @@ export function StepConstraints({ hook }) {
 
   return (
     <div className="animate-fade-in">
-      <h3>Step 5: Constraints</h3>
+      <h3>Constraints</h3>
       <p className="mb-6 text-text-secondary">Set shared scheduling constraints before faculty allocation. Break periods block teaching slots, and labs can reserve continuous blocks automatically.</p>
 
       <div className="glass-card mb-8">
